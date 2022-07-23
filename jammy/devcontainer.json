@@ -1,0 +1,31 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.238.1/containers/ubuntu
+{
+	"name": "Ubuntu",
+	"build": {
+		"dockerfile": "Dockerfile",
+		"args": { 
+            "USER": "vscode",
+            "NIX_PREBUILD_VARIANT": "jammy",
+            "NIX_PREBUILD_IMAGE": "mcr.microsoft.com/vscode/devcontainers/base:0",
+            "NIX_PREBUILD_GITHUB_SCOPE": "kingces95",
+            "NIX_PREBUILD_GITHUB_NAME": "codespace-container",
+            "NIX_PREBUILD_GITHUB_TAG": "0.1.0",
+            "NIX_PREBUILD_TOOLS": "binutils debootstrap man nano",
+            "NIX_CHROOT_SUITE": "focal"
+        }
+	},
+
+    "runArgs": [
+		"--privileged"
+	],
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "uname -a",
+
+	// Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+	"remoteUser": "vscode"
+}
